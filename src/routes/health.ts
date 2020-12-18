@@ -7,11 +7,14 @@ export const router = express.Router();
  *
  * /health:
  *   get:
- *     produces:
- *       - text/plain
+ *     description: Get health status of the API
  *     responses:
  *       200:
- *         description: Health status
+ *         description: successful operation
+ *         content:
+ *           text/plain:
+ *             schema:
+ *               type: string
  */
 router.get("/health", (req, res) =>
   res.send("All OK! from Express + TypeScript Server")
