@@ -1,9 +1,10 @@
 import express from "express";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUiExpress from "swagger-ui-express";
+import { config } from "./config";
 
 const app = express();
-const PORT = 8000;
+const { port } = config;
 
 const options = {
   swaggerDefinition: {
@@ -56,6 +57,6 @@ app.get("/health", (req, res) =>
   res.send("All OK! from Express + TypeScript Server")
 );
 
-app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
