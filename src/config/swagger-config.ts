@@ -20,7 +20,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: `http://localhost:${config.PORT}`,
+      url: `http://localhost:${config.port}`,
       description: "Development environment",
     },
   ],

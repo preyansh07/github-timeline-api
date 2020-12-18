@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/preyansh07/github-timeline-api#readme",
   "dependencies": {
+    "@octokit/graphql": "^4.5.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "swagger-jsdoc": "^6.0.0-rc.5",
