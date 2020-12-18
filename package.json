@@ -2,9 +2,9 @@
   "name": "github-timeline-api",
   "version": "0.1.0",
   "description": "Express.js RESTful API based on OpenAPI 3.0 Specification. It exposes GitHub user timeline data using GitHub GraphQL API.",
-  "main": "index.js",
+  "main": "./src/app.ts",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "nodemon ./src/app.ts",
     "build": "tsc --project ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
