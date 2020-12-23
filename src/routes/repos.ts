@@ -105,7 +105,7 @@ router.get("/users/:username/repos", async (req, res) => {
 
     res.json(response);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
 
     const apiError: ApiError = {
       status: 404,
