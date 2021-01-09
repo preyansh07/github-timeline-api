@@ -1,7 +1,7 @@
-import swaggerJsdoc from "swagger-jsdoc";
+import swaggerJsdoc, { OAS3Definition, OAS3Options } from "swagger-jsdoc";
 import { config } from "./app-config";
 
-const swaggerDefinition = {
+const swaggerDefinition: OAS3Definition = {
   openapi: "3.0.0",
   info: {
     title: "GitHub timeline API with Swagger",
@@ -30,7 +30,7 @@ const swaggerDefinition = {
   ],
 };
 
-const options = {
+const options: OAS3Options = {
   swaggerDefinition,
   apis: ["./src/routes/*.ts"],
 };
