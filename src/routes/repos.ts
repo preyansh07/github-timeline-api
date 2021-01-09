@@ -106,15 +106,23 @@ router.get("/users/:username/repos", async (req, res) => {
     res.json(response);
   } catch (error) {
     console.error(error.message);
+    let apiError: ApiError;
+    if (error.status === 404) {
+      apiError = {
+        status: 404,
+        message: `No GitHub user found with username '${req.params.username}'.`,
+      };
+    } else {
+      apiError = {
+        status: 500,
+        message: "Something went wrong. Please try again after sometime.",
+      };
+    }
 
-    const apiError: ApiError = {
-      status: 404,
-      message: `No GitHub user found with username '${req.params.username}'.`,
-    };
     const errorResponse: ErrorResponse = {
       errors: [apiError],
     };
 
-    res.status(404).json(errorResponse);
+    res.status(apiError.status).json(errorResponse);
   }
 });
